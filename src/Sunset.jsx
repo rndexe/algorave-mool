@@ -9,9 +9,9 @@ const SunsetMaterial = shaderMaterial(
     {
         iTime: 0,
         iResolution: new THREE.Vector3(),
-        uAudioLow: 0,
-        uAudioMid: 0,
-        uAudioHigh: 0,
+        uLow: 0,
+        uMid: 0,
+        uHigh: 0,
     },
     `
     varying vec2 vUv;
@@ -23,9 +23,9 @@ const SunsetMaterial = shaderMaterial(
     `
     uniform float iTime;
     uniform vec3 iResolution;
-    uniform float uAudioLow;
-    uniform float uAudioMid;
-    uniform float uAudioHigh;
+    uniform float uLow;
+    uniform float uMid;
+    uniform float uHigh;
 
     varying vec2 vUv;
 
@@ -96,9 +96,9 @@ function SunsetPlane() {
         if (materialRef.current) {
             materialRef.current.iTime = clock.getElapsedTime();
             materialRef.current.iResolution.set(size.width, size.height, 1);
-            materialRef.current.uAudioLow = low;
-            materialRef.current.uAudioMid = mid;
-            materialRef.current.uAudioHigh = high;
+            materialRef.current.uLow = low;
+            materialRef.current.uMid = mid;
+            materialRef.current.uHigh = high;
         }
     });
 
