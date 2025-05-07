@@ -1,6 +1,6 @@
 // BottomDisplay.jsx
 import React, { useEffect } from 'react';
-import { useAudioStore } from './store';
+import { useAudioStore } from '../store';
 
 export const AudioDisplay = () => {
     const { lo, lomid, mid, himid, hi } = useAudioStore();

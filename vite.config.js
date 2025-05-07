@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import glsl from 'vite-plugin-glsl';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: '1105'
-  }
-})
+    plugins: [react(), glsl()],
+    server: {
+        port: '1105',
+    },
+});
