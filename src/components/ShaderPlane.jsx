@@ -5,12 +5,16 @@ import { useRef } from 'react';
 import { useAudioStore } from '../store';
 
 import vertexShader from '../shaders/vertex.glsl';
+
+// import fragmentShader from '../shaders/radial.glsl';
+// import fragmentShader from '../shaders/stars.glsl';
 // import fragmentShader from '../shaders/turb.glsl';
-// import fragmentShader from '../shaders/cubic.glsl';
-// import fragmentShader from '../shaders/fire.glsl';
-import fragmentShader from '../shaders/hearts.glsl';
+// import fragmentShader from '../shaders/gyroids.glsl';
 // import fragmentShader from '../shaders/nebula.glsl';
-// import fragmentShader from '../shaders/nebula2.glsl';
+// import fragmentShader from '../shaders/hearts.glsl';
+// import fragmentShader from '../shaders/fire.glsl';
+// import fragmentShader from '../shaders/cubic.glsl';
+import fragmentShader from '../shaders/nebula2.glsl';
 // import fragmentShader from '../shaders/sunset.glsl';
 
 const MyMaterial = shaderMaterial(
@@ -52,7 +56,6 @@ export default function ShaderPlane() {
 
     return (
         <Plane args={[1.5, 1.5]}>
-            {/* key is optional, useful if you're conditionally remounting */}
             <myMaterial key={MyMaterial.key} ref={shaderRef} />
         </Plane>
     );

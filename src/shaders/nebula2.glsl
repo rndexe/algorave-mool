@@ -23,9 +23,9 @@ void main() {
     stepSize = 0.01 + 0.1 * signedY;
     rayDepth += stepSize;
 
-    accumulatedColor += (sin(vec4(1.0, 10.0, 10.0, 0.0) - rayPosition.y * 1.0) + 1.01) / rayDepth / stepSize;
+    accumulatedColor += (sin(vec4(1.0, 1.0, 0.2, 0.0) - rayPosition.y * 1.0) + 0.5);
   }
 
-  accumulatedColor = tanh(accumulatedColor / 50.0);
+  accumulatedColor = 1.0 - tanh(accumulatedColor / 5.);
   gl_FragColor = accumulatedColor;
 }
