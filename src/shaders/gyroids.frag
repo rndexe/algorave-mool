@@ -1,10 +1,3 @@
-/*
-    "Irregular Gyroids" by @XorDev
-
-    Here's a neat little formula I've found for creating aperiodic patterns
-    that almost look like Simplex noise for a tiny fraction of the cost.
-*/
-
 uniform float lo;
 uniform float lomid;
 uniform float mid;
@@ -26,8 +19,10 @@ float map(vec3 p)
 
 void main()
 {
+    vec2 res = iResolution;
+    vec2 FC = gl_FragCoord.xy;
     //Ray direction
-    vec3 d = normalize(vec3(gl_FragCoord.xy,0)-iResolution.xyy*.5);
+    vec3 d = normalize(vec3(FC,0)-res.xyy*.5);
     //Rotate pitch down
     d.yz *= mat2(.8,.6,-.6,.8);
     
